@@ -21,7 +21,7 @@ with app.app_context():
 app.register_blueprint(api_bp, url_prefix='/api')
 
 # Enable cross-origin requests to talk with Vue
-CORS(app)
+CORS(app, origins=["http://localhost:5173"])
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=8888)
